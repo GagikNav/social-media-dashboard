@@ -1,0 +1,19 @@
+{
+  "name": "social-media-dashboard",
+  "version": "1.0.0",
+  "description": "this is front end mentor practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GagikNav/social-media-dashboard.git"
+  },
+  "author": "gagik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GagikNav/social-media-dashboard/issues"
+  },
+  "homepage": "https://github.com/GagikNav/social-media-dashboard#readme"
+}
