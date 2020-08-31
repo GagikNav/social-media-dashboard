@@ -1,0 +1,65 @@
+$slide-btn-height: 1.25rem;
+$slide-btn-width: 2.65rem;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $slide-btn-width;
+  height: $slide-btn-height;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $Toggle-dark;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: $slide-btn-height * 0.7;
+  width: $slide-btn-height * 0.7;
+  left: $slide-btn-width * 0.1;
+  bottom: $slide-btn-height * 0.16;
+  background-color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background: $Toggle-dark;
+}
+input + .slider {
+  background: $Toggle-light;
+  // @include border;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $Toggle-dark;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX($slide-btn-width * 0.5);
+  -ms-transform: translateX($slide-btn-width * 0.5);
+  transform: translateX($slide-btn-width * 0.5);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
