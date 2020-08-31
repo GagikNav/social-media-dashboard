@@ -3,8 +3,10 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  margin: 2rem;
+  margin: 0 4rem;
   background: $White-BG;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -24,30 +26,29 @@ body {
 }
 
 .container-followers {
-  width: 100%;
-  margin: 2rem auto;
-  display: flex;
-  flex-wrap: wrap;
-  height: 30vh;
+  width: 80%;
+  margin: 0rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 32vh;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  justify-items: center;
   .card {
     border-radius: 5px;
     background: $Light-Grayish-Blue-Card-BG;
     min-width: 10rem;
-    width: 18%;
+    width: 90%;
     height: 90%;
     display: grid;
     grid-template-rows: 6% auto auto auto auto;
     grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
     grid-template-areas:
       'line'
       'card-header '
       'followers-number '
       'followers-text '
       'today-footer';
-    justify-items: center;
     .card-header {
       width: 40%;
       grid-area: card-header;
@@ -57,21 +58,21 @@ body {
       align-self: start;
 
       .comp {
-        margin: 0.2rem 0.5rem;
         font-size: 0.7rem;
       }
-      margin-top: 0;
-      padding-top: 0;
+      margin: 0.8rem 0.5rem 0rem 0.5rem;
     }
     .f-number {
-      font-size: 2rem;
+      padding: 2px;
+      font-size: 2.8rem;
       font-weight: 700;
       grid-area: followers-number;
-      margin: 0.2rem auto 0 auto;
+      margin: 0rem auto 0 auto;
     }
     .f-text {
-      font-size: 0.75rem;
-      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
       grid-area: followers-text;
     }
 
@@ -79,6 +80,9 @@ body {
       display: flex;
       grid-area: today-footer;
       align-items: center;
+      padding-bottom: 1rem;
+      font-size: 0.6rem;
+      font-weight: 700;
       gap: 5px;
       .f-today {
         color: $Lime-Green;
@@ -115,10 +119,64 @@ h3 {
   font-weight: 700;
   margin: 2rem 6rem;
 }
+
 .container-overview {
-  width: 100%;
-  display: flex;
+  width: 80%;
+  margin: 0rem auto;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 40vh;
+  align-items: center;
+  justify-items: center;
+  .card {
+    border-radius: 5px;
+    background: $Light-Grayish-Blue-Card-BG;
+    min-width: 10rem;
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    .card-text,
+    .difference,
+    .today-number {
+      width: 100%;
+      height: 100%;
+    }
+    .card-text {
+      font-size: 1rem;
+      padding-top: 1.5rem;
+      padding-left: 0.8rem;
+    }
+    .brand-icon {
+      padding-left: 3rem;
+    }
+    .difference {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 5px;
+      color: $Lime-Green;
+      justify-self: end;
+      padding-right: 1.2rem;
+      padding-bottom: 1.8rem;
+    }
+    .today-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      padding-left: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+    .icon-down {
+      color: $Bright-Red;
+    }
+  }
 }
+
 //
 //
 .attribution {

@@ -139,8 +139,15 @@ table {
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  margin: 2rem;
+  margin: 0 4rem;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .header {
@@ -227,28 +234,24 @@ body {
 }
 
 .container-followers {
-  width: 100%;
-  margin: 2rem auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  height: 30vh;
+  width: 80%;
+  margin: 0rem auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  height: 32vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 2rem;
+  justify-items: center;
 }
 
 .container-followers .card {
   border-radius: 5px;
   background: #f0f2fa;
   min-width: 10rem;
-  width: 18%;
+  width: 90%;
   height: 90%;
   display: -ms-grid;
   display: grid;
@@ -256,8 +259,8 @@ body {
       grid-template-rows: 6% auto auto auto auto;
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
-      grid-template-areas: 'line' 'card-header ' 'followers-number ' 'followers-text ' 'today-footer';
   justify-items: center;
+      grid-template-areas: 'line' 'card-header ' 'followers-number ' 'followers-text ' 'today-footer';
 }
 
 .container-followers .card .card-header {
@@ -275,27 +278,27 @@ body {
           align-items: center;
   -ms-flex-item-align: start;
       align-self: start;
-  margin-top: 0;
-  padding-top: 0;
+  margin: 0.8rem 0.5rem 0rem 0.5rem;
 }
 
 .container-followers .card .card-header .comp {
-  margin: 0.2rem 0.5rem;
   font-size: 0.7rem;
 }
 
 .container-followers .card .f-number {
-  font-size: 2rem;
+  padding: 2px;
+  font-size: 2.8rem;
   font-weight: 700;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: followers-number;
-  margin: 0.2rem auto 0 auto;
+  margin: 0rem auto 0 auto;
 }
 
 .container-followers .card .f-text {
-  font-size: 0.75rem;
-  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: followers-text;
@@ -311,6 +314,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 1rem;
+  font-size: 0.6rem;
+  font-weight: 700;
   gap: 5px;
 }
 
@@ -400,10 +406,81 @@ h3 {
 }
 
 .container-overview {
+  width: 80%;
+  margin: 0rem auto;
+  margin-bottom: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  height: 40vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.container-overview .card {
+  border-radius: 5px;
+  background: #f0f2fa;
+  min-width: 10rem;
+  width: 90%;
+  height: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-overview .card .card-text,
+.container-overview .card .difference,
+.container-overview .card .today-number {
   width: 100%;
+  height: 100%;
+}
+
+.container-overview .card .card-text {
+  font-size: 1rem;
+  padding-top: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+.container-overview .card .brand-icon {
+  padding-left: 3rem;
+}
+
+.container-overview .card .difference {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5px;
+  color: #1db489;
+  justify-self: end;
+  padding-right: 1.2rem;
+  padding-bottom: 1.8rem;
+}
+
+.container-overview .card .today-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-left: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.container-overview .card .icon-down {
+  color: #dc414c;
 }
 
 .attribution {
